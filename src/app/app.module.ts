@@ -4,10 +4,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// Material
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { MaterialModule } from './material.module'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+//Components
+import { ModalComponent } from './components/_shared/modal/modal.component'
 
 //Services
 import { AuthService } from './services/auth/auth.service'
@@ -15,18 +16,21 @@ import { AuthService } from './services/auth/auth.service'
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    NavBarComponent,
+    ModalComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCheckboxModule
+    MaterialModule
   ],
   providers: [
     AuthService
+  ],
+  entryComponents: [
+    ModalComponent
   ],
   bootstrap: [AppComponent]
 })
