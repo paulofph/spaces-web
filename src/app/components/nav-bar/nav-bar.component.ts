@@ -3,6 +3,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ModalComponent } from '../_shared/modal/modal.component';
+import { UserService } from 'src/app/services/user/user.service';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -13,6 +15,7 @@ export class NavBarComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private localStorage: LocalStorageService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     public loginDialog: MatDialog
@@ -25,7 +28,7 @@ export class NavBarComponent implements OnInit {
           .subscribe((params: Params) => {
             this.authService.facebookSignIn(params.access_token)
               .subscribe((params: Params) => {
-                console.log(params)
+                this.localStorage.set('token', params.token)
                 this.router.navigate(['/']);
               });
           });
@@ -36,11 +39,10 @@ export class NavBarComponent implements OnInit {
   facebookLogin() {
     this.authService.requestFacebookRedirectUri()
     .subscribe((response: {redirect_uri: string}) => {
-      console.log(response)
       window.location.replace(response.redirect_uri);
     });
   }
-
+    
   openDialog(): void {
     const dialogRef = this.loginDialog.open(ModalComponent, {
       width: '250px',
