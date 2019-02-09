@@ -6,15 +6,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module'
 import { AppHttpInterceptor } from './_shared/app-http.interceptor'
+import { RouterModule, Routes } from '@angular/router';
 
 //Components
 import { ModalComponent } from './components/_shared/modal/modal.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { IconTextButtonComponent } from './components/_shared/buttons/icon-text-button/icon-text-button.component'
 import { HorizontalAccountComponent } from './components/_shared/account/horizontal-account/horizontal-account.component'
+import { HomeComponent } from './components/home/home.component'
+import { SearchBarComponent } from './components/home/components/search-bar/search-bar.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
@@ -22,14 +29,20 @@ import { AuthService } from './services/http/auth/auth.service'
     NavBarComponent,
     ModalComponent,
     IconTextButtonComponent,
-    HorizontalAccountComponent
+    HorizontalAccountComponent,
+    HomeComponent,
+    SearchBarComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [
     AuthService,
