@@ -13,7 +13,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { IconTextButtonComponent } from './components/_shared/buttons/icon-text-button/icon-text-button.component'
 
 //Services
-import { AuthService } from './services/auth/auth.service'
+import { AuthService } from './services/http/auth/auth.service'
 
 @NgModule({
   declarations: [

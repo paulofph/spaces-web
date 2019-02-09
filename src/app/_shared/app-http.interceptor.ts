@@ -12,7 +12,6 @@ constructor(
 ) { }
 
 intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    console.log('intercepting')
     let authorizedRequest = request.clone();
     const tokenId = this.localStorage.get('token');
     if(tokenId){
