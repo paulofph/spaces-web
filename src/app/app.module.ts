@@ -5,11 +5,12 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module'
-import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 
 //Components
 import { ModalComponent } from './components/_shared/modal/modal.component'
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { IconTextButtonComponent } from './components/_shared/buttons/icon-text-button/icon-text-button.component'
 
 //Services
 import { AuthService } from './services/auth/auth.service'
@@ -18,7 +19,8 @@ import { AuthService } from './services/auth/auth.service'
   declarations: [
     AppComponent,
     NavBarComponent,
-    ModalComponent
+    ModalComponent,
+    IconTextButtonComponent
   ],
   imports: [
     HttpClientModule,
