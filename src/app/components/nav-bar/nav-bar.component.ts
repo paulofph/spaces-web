@@ -5,6 +5,8 @@ import { MatDialog } from '@angular/material';
 import { ModalComponent } from '../_shared/modal/modal.component';
 import { UserService } from 'src/app/services/http/user/user.service';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
+import { StateService } from 'src/app/services/state/state.service';
+import { Member } from 'src/app/models/entities/member';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,10 +14,12 @@ import { LocalStorageService } from 'src/app/services/local-storage/local-storag
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  public user: Member;
 
   constructor(
     private authService: AuthService,
     private localStorage: LocalStorageService,
+    private state: StateService,
     private userService: UserService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
@@ -23,6 +27,9 @@ export class NavBarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    if(this.localStorage.get('token')) {
+      this.getLoggedinUser()
+    }
     this.route.queryParams.subscribe((params: Params) => {
       if (params.code) {
         this.authService.requestFacebookAccessToken(params.code)
@@ -39,7 +46,6 @@ export class NavBarComponent implements OnInit {
   }
 
   facebookLogin = () => {
-    console.log('here')
     this.authService.requestFacebookRedirectUri()
     .subscribe((response: {redirect_uri: string}) => {
       window.location.replace(response.redirect_uri);
@@ -61,7 +67,8 @@ export class NavBarComponent implements OnInit {
 
   getLoggedinUser () {
     let subscriber = this.userService.getMe().subscribe(user => {
-      this
+      this.state.setUser(user);
+      this.user = this.state.getUser();
       subscriber.unsubscribe();
     })
   }
