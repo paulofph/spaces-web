@@ -11,6 +11,7 @@ import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 import { ModalComponent } from './components/_shared/modal/modal.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { IconTextButtonComponent } from './components/_shared/buttons/icon-text-button/icon-text-button.component'
+import { HorizontalAccountComponent } from './components/_shared/account/horizontal-account/horizontal-account.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -20,7 +21,8 @@ import { AuthService } from './services/http/auth/auth.service'
     AppComponent,
     NavBarComponent,
     ModalComponent,
-    IconTextButtonComponent
+    IconTextButtonComponent,
+    HorizontalAccountComponent
   ],
   imports: [
     HttpClientModule,

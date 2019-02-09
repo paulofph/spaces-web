@@ -1,4 +1,4 @@
-<div class="pflex-row nav-bar">
+<div class="pflex-row nav-bar pflex-cross-center">
   <div class="pflex-column pflex-20p">
     Logo
   </div>
@@ -9,6 +9,8 @@
     <button mat-button (click)="openDialog()">Log in/Sign Up</button>
   </div>
   <div class="pflex-column pflex-15p" *ngIf="user">
-    <span>{{user.name}}</span>
+    <app-horizontal-account
+      [name]="user.name"
+    ></app-horizontal-account>
   </div>
 </div>
