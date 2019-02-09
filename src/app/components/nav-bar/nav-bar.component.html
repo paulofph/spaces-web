@@ -1,9 +1,14 @@
-<div class="pflex-row">
-  <div class="pflex-column pflex-50p">
-    <button mat-button (click)="facebookLogin()">Loggin Facebook</button>
+<div class="pflex-row nav-bar">
+  <div class="pflex-column pflex-20p">
+    Logo
   </div>
 
-  <div class="pflex-column pflex-50p">
-    <button mat-button (click)="openDialog()">OpenLogin</button>
+  <div class="pflex-column pflex-1"></div>
+
+  <div class="pflex-column pflex-10p" *ngIf="!user">
+    <button mat-button (click)="openDialog()">Log in/Sign Up</button>
+  </div>
+  <div class="pflex-column pflex-15p" *ngIf="user">
+    <span>{{user.name}}</span>
   </div>
 </div>
