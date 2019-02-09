@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 
 //Components
 import { ModalComponent } from './components/_shared/modal/modal.component'
@@ -27,7 +28,12 @@ import { AuthService } from './services/auth/auth.service'
     MaterialModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    { 
+      provide: HTTP_INTERCEPTORS, 
+      useClass: AppHttpInterceptor, 
+      multi: true 
+    }
   ],
   entryComponents: [
     ModalComponent

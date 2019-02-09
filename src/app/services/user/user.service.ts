@@ -12,7 +12,7 @@ export class UserService {
     private readonly httpClient: HttpClient
   ) { }
 
-  getLoggedInUser(): Observable<any> {
+  getMe(): Observable<any> {
     return this.httpClient.get(`${environment.apiUrl}/users/me`);
   }
 }

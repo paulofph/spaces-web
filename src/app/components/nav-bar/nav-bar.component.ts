@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private localStorage: LocalStorageService,
+    private userService: UserService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
     public loginDialog: MatDialog
@@ -28,7 +29,8 @@ export class NavBarComponent implements OnInit {
           .subscribe((params: Params) => {
             this.authService.facebookSignIn(params.access_token)
               .subscribe((params: Params) => {
-                this.localStorage.set('token', params.token)
+                this.localStorage.set('token', params.token);
+                this.getLoggedinUser();
                 this.router.navigate(['/']);
               });
           });
@@ -53,5 +55,12 @@ export class NavBarComponent implements OnInit {
       console.log('The dialog was closed');
       // this.animal = result;
     });
+  }
+
+  getLoggedinUser () {
+    let subscriber = this.userService.getMe().subscribe(user => {
+      console.log(user);
+      subscriber.unsubscribe();
+    })
   }
 }
