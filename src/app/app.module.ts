@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module'
 import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 import { RouterModule, Routes } from '@angular/router';
+import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
 //Components
 import { ModalComponent } from './components/_shared/modal/modal.component'
@@ -39,6 +40,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    GooglePlaceModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only

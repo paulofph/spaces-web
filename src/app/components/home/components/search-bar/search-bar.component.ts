@@ -12,4 +12,8 @@ export class SearchBarComponent implements OnInit {
   ngOnInit() {
   }
 
+  handleAddressChange(event) {
+    console.log(event.geometry.location.lat())
+  }
+
 }
