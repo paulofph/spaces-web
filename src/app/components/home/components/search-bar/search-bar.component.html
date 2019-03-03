@@ -1,3 +1,18 @@
-<div class="search-bar">
-  <input ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)"/>
+<div class="pflex-row search-bar pflex-cross-center p">
+  <div class="pflex-column pflex-1">
+    <mat-form-field class="example-full-width">
+      <input 
+        matInput 
+        placeholder="Favorite food" 
+        ngx-google-places-autocomplete
+        placeholder="test"
+        [options]='options' 
+        #placesRef="ngx-places" 
+        (onAddressChange)="handleAddressChange($event)"
+      >
+    </mat-form-field>
+  </div>
+  <div class="pflex-column pflex-1">
+    1
+  </div>
 </div>

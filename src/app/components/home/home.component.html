@@ -1,3 +1,5 @@
 <div class="pflex-row pflex-center pflex-cross-center banner">
-  <app-search-bar></app-search-bar>
+  <app-search-bar
+    (onLocationChange)="getSpaces($event)"
+  ></app-search-bar>
 </div>

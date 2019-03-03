@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SpaceService } from 'src/app/services/http/space/space.service';
+import { Subscriber } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private spaceService: SpaceService
+  ) { }
 
   ngOnInit() {
+    
   }
 
+  getSpaces(location) {
+    console.log(location)
+    const subscriber = this.spaceService.getSpaces().subscribe(result => {
+      console.log(result);
+      subscriber.unsubscribe();
+    })
+  }
 }

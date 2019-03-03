@@ -9,6 +9,11 @@ import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 import { RouterModule, Routes } from '@angular/router';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 
+//Angular Material
+import {
+  MatInputModule
+} from '@angular/material';
+
 //Components
 import { ModalComponent } from './components/_shared/modal/modal.component'
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
@@ -44,7 +49,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
-    )
+    ),
+    MatInputModule
   ],
   providers: [
     AuthService,
