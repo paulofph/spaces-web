@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Location } from './../../../../models/entities/location' 
 
 @Component({
   selector: 'app-search-bar',
@@ -9,14 +10,21 @@ export class SearchBarComponent implements OnInit {
 
   @Output() onLocationChange = new EventEmitter();
 
+  public radiusOptions: Number[] = [10, 20, 50, 100];
+  public radius: Number = this.radiusOptions[0];
+  public location: Location = new Location;
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  handleAddressChange(event) {
-    this.onLocationChange.emit(event);
-    console.log(event.geometry.location.lat())
+  onAddressChange(event) {
+    this.location.latitude = event.geometry.location.lat();
+    this.location.longitude = event.geometry.location.lon();
   }
 
+  onRadiusChange(radius: Number) {
+    this.radius = radius;
+  }
 }

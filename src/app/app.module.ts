@@ -8,10 +8,12 @@ import { MaterialModule } from './material.module'
 import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 import { RouterModule, Routes } from '@angular/router';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
+import { FormsModule } from '@angular/forms';
 
 //Angular Material
 import {
-  MatInputModule
+  MatInputModule,
+  MatSelectModule
 } from '@angular/material';
 
 //Components
@@ -21,6 +23,7 @@ import { IconTextButtonComponent } from './components/_shared/buttons/icon-text-
 import { HorizontalAccountComponent } from './components/_shared/account/horizontal-account/horizontal-account.component'
 import { HomeComponent } from './components/home/home.component'
 import { SearchBarComponent } from './components/home/components/search-bar/search-bar.component'
+import { SelectComponent } from './components/_shared/form/select/select.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -37,7 +40,8 @@ const appRoutes: Routes = [
     IconTextButtonComponent,
     HorizontalAccountComponent,
     HomeComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SelectComponent
   ],
   imports: [
     HttpClientModule,
@@ -50,7 +54,9 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     ),
-    MatInputModule
+    MatInputModule,
+    FormsModule,
+    MatSelectModule
   ],
   providers: [
     AuthService,

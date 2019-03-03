@@ -1,18 +1,55 @@
-<div class="pflex-row search-bar pflex-cross-center p">
-  <div class="pflex-column pflex-1">
-    <mat-form-field class="example-full-width">
-      <input 
-        matInput 
-        placeholder="Favorite food" 
-        ngx-google-places-autocomplete
-        placeholder="test"
-        [options]='options' 
-        #placesRef="ngx-places" 
-        (onAddressChange)="handleAddressChange($event)"
-      >
-    </mat-form-field>
+<div class="search-bar pflex-cross-center p+">
+  <div class="pb">
+    <h1>Find homes in United States on Airbnb</h1>
+    <div>Discover entire homes and private rooms perfect for any trip.</div>
   </div>
-  <div class="pflex-column pflex-1">
-    1
+  <div class="pflex-row">
+    <div class="pflex-column pflex-100p">
+      <mat-form-field class="example-full-width">
+        <input 
+          matInput 
+          placeholder="Favorite food" 
+          ngx-google-places-autocomplete
+          placeholder="Localização"
+          [options]='options' 
+          #placesRef="ngx-places" 
+          (onAddressChange)="onAddressChange($event)"
+        >
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="pflex-row">
+    <div class="pflex-column pflex-1 pl">
+      <app-select
+        [options]="radiusOptions"
+        [placeholder]="'Raio (Km)'" 
+        (onSelect)="onRadiusChange($event)"
+      ></app-select>
+    </div>
+
+    <div class="pflex-column pflex-1 pl">
+      <app-select
+        [options]="radiusOptions"
+        [placeholder]="'Nº Pessoas'" 
+        (onSelect)="onRadiusChange($event)"
+      ></app-select>
+    </div>
+  </div>
+  <div class="pflex-row">
+    <div class="pflex-column pflex-1 pl">
+      <app-select
+        [options]="radiusOptions"
+        [placeholder]="'Raio (Km)'" 
+        (onSelect)="onRadiusChange($event)"
+      ></app-select>
+    </div>
+  </div>
+  <div class="pflex-row">
+    <app-icon-text-button
+      [icon]="'facebook-f'"
+      [label]="'Login com Facebook'"
+      [color]="'fb-blue'"
+      (onClick)="data.facebook()"
+    ></app-icon-text-button>
   </div>
 </div>
