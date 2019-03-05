@@ -28,12 +28,9 @@
     </div>
 
     <div class="pflex-column pflex-1 pl">
-      <app-select
-        [options]="radiusOptions"
-        [model]="guestCount"
-        [placeholder]="'Nº Pessoas'" 
-        (onSelect)="onRadiusChange($event)"
-      ></app-select>
+      <app-numerical-input
+        [(model)]="guestCount"
+      ></app-numerical-input>
     </div>
   </div>
   <div class="pflex-row pt+ pflex-center">

@@ -30,6 +30,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   search() {
-    console.log(this.radius)
+    
   }
 }

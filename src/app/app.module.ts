@@ -25,6 +25,7 @@ import { HorizontalAccountComponent } from './components/_shared/account/horizon
 import { HomeComponent } from './components/home/home.component'
 import { SearchBarComponent } from './components/home/components/search-bar/search-bar.component'
 import { SelectComponent } from './components/_shared/form/select/select.component'
+import { NumericalInputComponent } from './components/_shared/form/numerical-input/numerical-input.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     HorizontalAccountComponent,
     HomeComponent,
     SearchBarComponent,
-    SelectComponent
+    SelectComponent,
+    NumericalInputComponent
   ],
   imports: [
     HttpClientModule,
