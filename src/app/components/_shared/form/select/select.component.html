@@ -1,5 +1,5 @@
 <mat-form-field style="width: 100%">
-  <mat-select [placeholder]="placeholder" [(ngModel)]="selectedOption" (selectionChange)="selectionChange()">
+  <mat-select [placeholder]="placeholder" [(ngModel)]="model" (selectionChange)="selectionChange()">
     <mat-option *ngFor="let option of options" name="select" [value]="option" ngDefaultControl>
       {{option}}
     </mat-option>

@@ -22,34 +22,26 @@
     <div class="pflex-column pflex-1 pl">
       <app-select
         [options]="radiusOptions"
+        [(model)]="radius"
         [placeholder]="'Raio (Km)'" 
-        (onSelect)="onRadiusChange($event)"
       ></app-select>
     </div>
 
     <div class="pflex-column pflex-1 pl">
       <app-select
         [options]="radiusOptions"
+        [model]="guestCount"
         [placeholder]="'Nº Pessoas'" 
         (onSelect)="onRadiusChange($event)"
       ></app-select>
     </div>
   </div>
-  <div class="pflex-row">
-    <div class="pflex-column pflex-1 pl">
-      <app-select
-        [options]="radiusOptions"
-        [placeholder]="'Raio (Km)'" 
-        (onSelect)="onRadiusChange($event)"
-      ></app-select>
-    </div>
-  </div>
-  <div class="pflex-row">
+  <div class="pflex-row pt+ pflex-center">
     <app-icon-text-button
-      [icon]="'facebook-f'"
-      [label]="'Login com Facebook'"
-      [color]="'fb-blue'"
-      (onClick)="data.facebook()"
+      [icon]="'search'"
+      [label]="'Procurar'"
+      [color]="'color-primary'"
+      (onClick)="search()"
     ></app-icon-text-button>
   </div>
 </div>

@@ -13,6 +13,7 @@ export class SearchBarComponent implements OnInit {
   public radiusOptions: Number[] = [10, 20, 50, 100];
   public radius: Number = this.radiusOptions[0];
   public location: Location = new Location;
+  public guestCount: Number = 1;
 
   constructor() { }
 
@@ -24,7 +25,11 @@ export class SearchBarComponent implements OnInit {
     this.location.longitude = event.geometry.location.lon();
   }
 
-  onRadiusChange(radius: Number) {
-    this.radius = radius;
+  onGuestChange(radius: Number) {
+    // this.radius = radius;
+  }
+
+  search() {
+    console.log(this.radius)
   }
 }

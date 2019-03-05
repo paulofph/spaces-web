@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
 //Angular Material
 import {
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDatepickerModule
 } from '@angular/material';
 
 //Components
@@ -56,7 +57,8 @@ const appRoutes: Routes = [
     ),
     MatInputModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule
   ],
   providers: [
     AuthService,
