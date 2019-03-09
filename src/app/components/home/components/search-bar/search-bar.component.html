@@ -22,14 +22,14 @@
     <div class="pflex-column pflex-1 pl">
       <app-select
         [options]="radiusOptions"
-        [(model)]="radius"
+        [(model)]="spaceFilter.radius"
         [placeholder]="'Raio (Km)'" 
       ></app-select>
     </div>
 
     <div class="pflex-column pflex-1 pl">
       <app-numerical-input
-        [(model)]="guestCount"
+        [(model)]="spaceFilter.guestCount"
       ></app-numerical-input>
     </div>
   </div>

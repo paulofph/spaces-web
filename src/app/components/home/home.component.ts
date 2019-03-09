@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
     
   }
 
-  getSpaces(location) {
-    console.log(location)
+  getSpaces(query: any) {
+    console.log(query)
     const subscriber = this.spaceService.getSpaces().subscribe(result => {
       console.log(result);
       subscriber.unsubscribe();
