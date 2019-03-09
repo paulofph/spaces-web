@@ -10,9 +10,9 @@ import { SpaceService } from 'src/app/services/http/space/space.service';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Output() onLocationChange = new EventEmitter();
+  @Output() onSearch = new EventEmitter();
 
-  public radiusOptions: Number[] = [10, 20, 50, 100];
+  public radiusOptions: Number[] = [10, 20, 50, 100, 200];
   public spaceFilter: SpaceFilter = new SpaceFilter();
 
   constructor(
@@ -30,9 +30,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   search() {
-    console.log(this.spaceFilter)
-    this.spaceService.getSpaces(this.spaceFilter).subscribe(result => {
-
-    })
+    this.onSearch.emit(this.spaceFilter);
   }
 }

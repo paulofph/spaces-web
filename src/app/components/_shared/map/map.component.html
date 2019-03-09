@@ -1,0 +1,11 @@
+<agm-map [latitude]="center.latitude" [longitude]="center.longitude" [zoom]="12">
+  <agm-marker *ngFor="let space of spaces" 
+    [latitude]="space.location.latitude" 
+    [longitude]="space.location.longitude"
+    [iconUrl]="icon">
+    (markerClick)="onClick()">
+    <agm-info-window [disableAutoPan]="true">
+      Hi, this is the content of the <strong>info window</strong>
+    </agm-info-window>
+  </agm-marker>
+</agm-map>

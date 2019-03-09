@@ -9,6 +9,7 @@ import { AppHttpInterceptor } from './_shared/app-http.interceptor'
 import { RouterModule, Routes } from '@angular/router';
 import { GooglePlaceModule } from "ngx-google-places-autocomplete";
 import { FormsModule } from '@angular/forms';
+import { AgmCoreModule } from '@agm/core';
 
 //Angular Material
 import {
@@ -26,6 +27,8 @@ import { HomeComponent } from './components/home/home.component'
 import { SearchBarComponent } from './components/home/components/search-bar/search-bar.component'
 import { SelectComponent } from './components/_shared/form/select/select.component'
 import { NumericalInputComponent } from './components/_shared/form/numerical-input/numerical-input.component'
+import { MapComponent } from './components/_shared/map/map.component'
+import { MapPlaceDetailsComponent } from './components/_shared/map/map-place-details/map-place-details.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -44,7 +47,9 @@ const appRoutes: Routes = [
     HomeComponent,
     SearchBarComponent,
     SelectComponent,
-    NumericalInputComponent
+    NumericalInputComponent,
+    MapComponent,
+    MapPlaceDetailsComponent
   ],
   imports: [
     HttpClientModule,
@@ -60,7 +65,11 @@ const appRoutes: Routes = [
     MatInputModule,
     FormsModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyA_AFdEHBZhijRUI1XZOTcfZ59vi11j7nM',
+      libraries: ['places']
+    })
   ],
   providers: [
     AuthService,

@@ -1,5 +1,17 @@
 <div class="pflex-row pflex-center pflex-cross-center banner">
   <app-search-bar
-    (onLocationChange)="getSpaces($event)"
+    (onSearch)="getSpaces($event)"
   ></app-search-bar>
+</div>
+
+<div class="pflex-row">
+  <div class="pflex-column pflex-70p">
+    <app-map-place-details></app-map-place-details>
+  </div>
+  <div class="pflex-column pflex-30p">
+    <app-map *ngIf="spaces"
+      [center]="spaceFilter.location"
+      [spaces]="spaces"
+    ></app-map>
+  </div>
 </div>
