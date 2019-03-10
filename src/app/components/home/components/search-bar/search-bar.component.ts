@@ -1,7 +1,5 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { Location } from './../../../../models/entities/location' 
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { SpaceFilter } from 'src/app/models/filters/space-filter';
-import { SpaceService } from 'src/app/services/http/space/space.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -10,26 +8,25 @@ import { SpaceService } from 'src/app/services/http/space/space.service';
 })
 export class SearchBarComponent implements OnInit {
 
+  @Input() spaceFilter: SpaceFilter;
   @Output() onSearch = new EventEmitter();
+  @Output() onAddressChange = new EventEmitter();
 
   public radiusOptions: Number[] = [10, 20, 50, 100, 200];
-  public spaceFilter: SpaceFilter = new SpaceFilter();
 
-  constructor(
-    private spaceService: SpaceService
-  ) { }
+  constructor( ) { }
 
   ngOnInit() {
     this.spaceFilter.radius = this.radiusOptions[0];
     this.spaceFilter.guestCount = 1;
   }
 
-  onAddressChange(event) {
-    this.spaceFilter.location.latitude = event.geometry.location.lat();
-    this.spaceFilter.location.longitude = event.geometry.location.lng();
+  addressChange(event) {
+    this.onAddressChange.emit(event)  
   }
 
   search() {
+
     this.onSearch.emit(this.spaceFilter);
   }
 }

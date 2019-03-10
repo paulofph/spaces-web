@@ -1,6 +1,8 @@
 <div class="pflex-row pflex-center pflex-cross-center banner">
   <app-search-bar
-    (onSearch)="getSpaces($event)"
+    [spaceFilter]="spaceFilter"
+    (onSearch)="searchSpaces($event)"
+    (onAddressChange)="addressChange($event)"
   ></app-search-bar>
 </div>
 
@@ -9,7 +11,7 @@
   </div>
   <div class="pflex-column pflex-30p">
     <app-map *ngIf="spaces"
-      [center]="spaceFilter.location"
+      [center]="mapCenter"
       [spaces]="spaces"
     ></app-map>
   </div>

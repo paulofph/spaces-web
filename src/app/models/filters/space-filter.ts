@@ -4,5 +4,5 @@ export class SpaceFilter {
     location: Location = new Location();
     guestCount: Number;
     radius: Number;
-
+    searchText: String = null;
 }
