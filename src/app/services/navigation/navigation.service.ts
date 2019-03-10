@@ -16,4 +16,8 @@ export class NavigationService {
       { queryParams: queryParams }
     );
   }
+
+  ownerArea() {
+    this.router.navigate(['owner-area'])
+  }
 }

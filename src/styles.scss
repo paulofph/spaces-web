@@ -1,15 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import './pflex/pflex.scss';
+@import './colors.scss';
 
 body {
     font-family: Roboto,"Helvetica Neue",sans-serif;
     -webkit-font-smoothing: antialiased;
     padding: 0px;
     margin: 0px;
+    color: $color-tertiary;
 }
 
 h1 {
     font-size: 32px;
     font-weight: 700;
+}
+
+.full-width {
+    width: 100%;
 }

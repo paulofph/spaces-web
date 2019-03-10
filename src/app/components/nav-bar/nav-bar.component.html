@@ -11,6 +11,11 @@
   <div class="pflex-column pflex-15p" *ngIf="user">
     <app-horizontal-account
       [name]="user.name"
+      [matMenuTriggerFor]="menu"
     ></app-horizontal-account>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="navigateToOwnerArea()">Área de Proprietário</button>
+      <button mat-menu-item>Logout</button>
+    </mat-menu>
   </div>
 </div>

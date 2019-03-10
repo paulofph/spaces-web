@@ -1,0 +1,59 @@
+<div class="pflex-row pflex-center">
+  <img src="./../../../../assets/images/home.png">
+</div>
+<div class="pflex-row">
+  <div class="pflex-column pflex-50p">
+    <div class="pflex-row">
+      <h2 class="mb-">Qual o nome do seu espaço?</h2>
+    </div>
+    <div class="pflex-row">
+      <app-input
+        class="full-width"
+        [(model)]="space.title"
+      ></app-input>
+    </div>
+
+    <div class="pflex-row pt+">
+        <h2 class="mb-">Que tipo de espaço tem?</h2>
+    </div>
+    <div class="pflex-row">
+      <div class="pflex-column pflex-1">
+        <app-select-object
+          [options]="spaceTypeOptions"
+          [(model)]="space.type"
+          [placeholder]="'Tipo de Espaço'" 
+        ></app-select-object>
+      </div>
+      <div class="pflex-column pflex-10p pl">
+        <app-numerical-input
+          [placeholder]="'Lotação'"
+          [(model)]="space.availablePlaces"
+        ></app-numerical-input>
+      </div>
+    </div>
+
+    <div class="pflex-row pt+">
+        <h2 class="mb-">Onde é o seu espaço?</h2>
+    </div>
+    <div class="pflex-row">
+      <div class="pflex-column pflex-1">
+          <app-location-input
+            [searchText]="locationSearch"
+            (onAddressChange)="onAddressChange($event)"
+          ></app-location-input>
+      </div>
+    </div>
+
+    <div class="pflex-row pt+">
+        <h2 class="mb-">Que comodidades tem disponíveis?</h2>
+    </div>
+    <div class="pflex-row">
+      <div class="pflex-column pflex-1">
+          <app-location-input
+            [searchText]="locationSearch"
+            (onAddressChange)="onAddressChange($event)"
+          ></app-location-input>
+      </div>
+    </div>
+  </div>
+</div>

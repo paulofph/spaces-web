@@ -1,0 +1,11 @@
+<mat-form-field class="full-width">
+  <input 
+    matInput 
+    [value]="searchText"
+    ngx-google-places-autocomplete
+    placeholder="Localização"
+    [options]='options' 
+    #placesRef="ngx-places" 
+    (onAddressChange)="addressChange($event)"
+  >
+</mat-form-field>

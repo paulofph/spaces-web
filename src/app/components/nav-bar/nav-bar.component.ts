@@ -7,6 +7,7 @@ import { UserService } from 'src/app/services/http/user/user.service';
 import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { StateService } from 'src/app/services/state/state.service';
 import { Member } from 'src/app/models/entities/member';
+import { NavigationService } from 'src/app/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -23,7 +24,8 @@ export class NavBarComponent implements OnInit {
     private userService: UserService,
     private readonly route: ActivatedRoute,
     private readonly router: Router,
-    public loginDialog: MatDialog
+    public loginDialog: MatDialog,
+    private navigationService: NavigationService
   ) { }
 
   ngOnInit() {
@@ -71,5 +73,9 @@ export class NavBarComponent implements OnInit {
       this.user = this.state.getUser();
       subscriber.unsubscribe();
     })
+  }
+
+  navigateToOwnerArea () {
+    this.navigationService.ownerArea();
   }
 }

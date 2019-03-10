@@ -27,6 +27,5 @@ export class NumericalInputComponent implements OnInit {
       return false;
     }
     return true;
-
   }
 }

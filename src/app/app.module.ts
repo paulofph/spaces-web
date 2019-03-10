@@ -15,7 +15,8 @@ import { AgmCoreModule } from '@agm/core';
 import {
   MatInputModule,
   MatSelectModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatMenuModule
 } from '@angular/material';
 
 //Components
@@ -29,12 +30,20 @@ import { SelectComponent } from './components/_shared/form/select/select.compone
 import { NumericalInputComponent } from './components/_shared/form/numerical-input/numerical-input.component'
 import { MapComponent } from './components/_shared/map/map.component'
 import { MapPlaceDetailsComponent } from './components/_shared/map/map-place-details/map-place-details.component'
+import { OwnerAreaComponent } from './components/owner-area/owner-area.component'
+import { SpaceComponent } from './components/space/space.component'
+import { InputComponent } from './components/_shared/form/input/input.component'
+import { EditSpaceComponent } from './components/space/edit-space/edit-space.component'
+import { SelectObjectComponent } from './components/_shared/form/select-object/select-object.component'
+import { LocationInputComponent } from './components/_shared/form/location-input/location-input.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent }
+  { path: '', component: HomeComponent },
+  { path: 'owner-area', component: OwnerAreaComponent },
+  { path: 'space/:id', component: SpaceComponent }
 ];
 
 @NgModule({
@@ -49,7 +58,13 @@ const appRoutes: Routes = [
     SelectComponent,
     NumericalInputComponent,
     MapComponent,
-    MapPlaceDetailsComponent
+    MapPlaceDetailsComponent,
+    OwnerAreaComponent,
+    SpaceComponent,
+    InputComponent,
+    EditSpaceComponent,
+    SelectObjectComponent,
+    LocationInputComponent
   ],
   imports: [
     HttpClientModule,
@@ -66,6 +81,7 @@ const appRoutes: Routes = [
     FormsModule,
     MatSelectModule,
     MatDatepickerModule,
+    MatMenuModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA_AFdEHBZhijRUI1XZOTcfZ59vi11j7nM',
       libraries: ['places']
