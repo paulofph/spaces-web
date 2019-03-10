@@ -1,0 +1,11 @@
+<div class="pflex-row pflex-cross-center">
+    <div class="pflex-column">
+        <mat-checkbox class="checkbox" [(ngModel)]="model" (change)="onChange()"></mat-checkbox>
+    </div>
+    <div class="pflex-column">
+        <i class="pl+ pr" [ngClass]="icon"></i>
+    </div>
+    <div class="pflex-column">
+        <span>{{label}}</span>
+    </div>
+</div>

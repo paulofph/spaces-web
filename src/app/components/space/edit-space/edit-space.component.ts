@@ -14,7 +14,12 @@ export class EditSpaceComponent implements OnInit {
   ];
 
   public amenitiesOptions: Amenity[] = [
-    { id: 1, label: 'Churrasco', icon: '' }
+    { id: 1, label: 'Churrasco', icon: 'fas fa-hamburger', selected: false },
+    { id: 2, label: 'Chapéu(s) de sol', icon: 'fas fa-umbrella-beach', selected: false },
+    { id: 3, label: 'Espreguiçadeira(s)', icon: 'fas fa-chair', selected: false },
+    { id: 4, label: 'Casa de Banho', icon: 'fas fa-toilet', selected: false },
+    { id: 5, label: 'Banho', icon: 'fas fa-shower', selected: false },
+    { id: 6, label: 'Toalha de Banho', icon: 'fas fa-hot-tub', selected: false },
   ];
 
   public locationSearch: String = null;

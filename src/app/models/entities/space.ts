@@ -15,4 +15,5 @@ export class Amenity {
     id: Number;
     label: String;
     icon: String;
+    selected: Boolean;
 } 

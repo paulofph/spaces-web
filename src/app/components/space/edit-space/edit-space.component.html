@@ -48,11 +48,12 @@
         <h2 class="mb-">Que comodidades tem disponíveis?</h2>
     </div>
     <div class="pflex-row">
-      <div class="pflex-column pflex-1">
-          <app-location-input
-            [searchText]="locationSearch"
-            (onAddressChange)="onAddressChange($event)"
-          ></app-location-input>
+      <div class="pflex-column pflex-50p pb pt" *ngFor="let amenity of amenitiesOptions">
+        <app-checkbox
+          [(model)]="amenity.selected"
+          [label]="amenity.label"
+          [icon]="amenity.icon"
+        ></app-checkbox>
       </div>
     </div>
   </div>

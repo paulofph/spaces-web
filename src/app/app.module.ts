@@ -16,7 +16,8 @@ import {
   MatInputModule,
   MatSelectModule,
   MatDatepickerModule,
-  MatMenuModule
+  MatMenuModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 //Components
@@ -36,6 +37,7 @@ import { InputComponent } from './components/_shared/form/input/input.component'
 import { EditSpaceComponent } from './components/space/edit-space/edit-space.component'
 import { SelectObjectComponent } from './components/_shared/form/select-object/select-object.component'
 import { LocationInputComponent } from './components/_shared/form/location-input/location-input.component'
+import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -64,7 +66,8 @@ const appRoutes: Routes = [
     InputComponent,
     EditSpaceComponent,
     SelectObjectComponent,
-    LocationInputComponent
+    LocationInputComponent,
+    CheckboxComponent
   ],
   imports: [
     HttpClientModule,
@@ -82,6 +85,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatDatepickerModule,
     MatMenuModule,
+    MatCheckboxModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyA_AFdEHBZhijRUI1XZOTcfZ59vi11j7nM',
       libraries: ['places']

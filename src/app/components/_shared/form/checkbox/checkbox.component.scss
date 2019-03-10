@@ -1,0 +1,5 @@
+@import "./../../../../../colors.scss";
+
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+background-color: $color-primary !important;
+}
