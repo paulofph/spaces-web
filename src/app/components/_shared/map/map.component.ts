@@ -9,7 +9,7 @@ import { Location } from 'src/app/models/entities/location';
 })
 export class MapComponent implements OnInit {
   @Input() center: Location;
-  @Input() spaces: Space[];
+  @Input() spaces: Space[] = [];
   public icon: any;
   constructor() { }
 

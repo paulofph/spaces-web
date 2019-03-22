@@ -2,7 +2,7 @@ import { Location } from './location';
 
 export class Space {
     id: Number;
-    location: Location;
+    location: Location = new Location();
     type: SpaceType;
 }
 

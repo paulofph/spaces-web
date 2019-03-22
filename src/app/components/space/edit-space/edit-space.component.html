@@ -68,16 +68,23 @@
       </div>
     </div>
   </div>
+  <div class="pflex-column pflex-1 p+">
+    <app-map
+      *ngIf="space.location.latitude"
+      [center]="space.location"
+      [spaces]="[space]"
+    ></app-map>
+  </div>
 </div>
 <div class="pflex-row">
   <app-icon-text-button
     class="pr"
     [label]="'Guardar'"
-    (onClick)="data.facebook()"
+    (onClick)="save()"
   ></app-icon-text-button>
   <app-icon-text-button
     [label]="'Publicar'"
     [color]="'color-primary'"
-    (onClick)="data.facebook()"
+    (onClick)="publish()"
   ></app-icon-text-button>
 </div>

@@ -29,4 +29,8 @@ export class SpaceService {
     }
     return this.httpClient.get<Space[]>(`${environment.apiUrl}/spaces` + (queryParams ? queryParams: ''));
   }
+
+  saveSpace(space: Space): Observable<Space>{
+    return this.httpClient.post<Space>(`${environment.apiUrl}/spaces`, space);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Space, SpaceType, Amenity } from 'src/app/models/entities/space';
 
 @Component({
@@ -25,6 +25,8 @@ export class EditSpaceComponent implements OnInit {
   public locationSearch: String = null;
 
   @Input() space: Space;
+  @Output() onSave = new EventEmitter(); 
+  @Output() onPublish = new EventEmitter(); 
 
   constructor() { }
 
@@ -33,5 +35,16 @@ export class EditSpaceComponent implements OnInit {
 
   onAddressChange(mapsEvent) {
     this.locationSearch = mapsEvent.formatted_address;
+    this.space.location.latitude = mapsEvent.geometry.location.lat();
+    this.space.location.longitude = mapsEvent.geometry.location.lng();
+  }
+
+  save() {
+    this.onSave.emit(this.space)
+  }
+
+
+  publish() {
+    this.onPublish.emit(this.space)
   }
 }
