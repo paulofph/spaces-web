@@ -38,6 +38,7 @@ import { EditSpaceComponent } from './components/space/edit-space/edit-space.com
 import { SelectObjectComponent } from './components/_shared/form/select-object/select-object.component'
 import { LocationInputComponent } from './components/_shared/form/location-input/location-input.component'
 import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.component'
+import { TextAreaComponent } from './components/_shared/form/text-area/text-area.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     EditSpaceComponent,
     SelectObjectComponent,
     LocationInputComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    TextAreaComponent
   ],
   imports: [
     HttpClientModule,
