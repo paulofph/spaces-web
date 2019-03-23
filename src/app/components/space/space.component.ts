@@ -20,14 +20,12 @@ export class SpaceComponent implements OnInit {
 
   save(space: Space) {
     let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
-      console.log(_);
       subscriber.unsubscribe();
     });
   }
 
   publish(space: Space) {
     let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
-      console.log(_);
       subscriber.unsubscribe();
     });
   }

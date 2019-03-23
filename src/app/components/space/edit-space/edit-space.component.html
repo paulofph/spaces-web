@@ -19,7 +19,7 @@
     <div class="pflex-row">
       <div class="pflex-column pflex-1">
         <app-select-object
-          [options]="spaceTypeOptions"
+          [options]="spaceTypes"
           [(model)]="space.type"
           [placeholder]="'Tipo de Espaço'" 
         ></app-select-object>
@@ -48,15 +48,14 @@
         <h2 class="mb-">Que comodidades tem disponíveis?</h2>
     </div>
     <div class="pflex-row">
-      <div class="pflex-column pflex-50p pb pt" *ngFor="let amenity of amenitiesOptions">
+      <div class="pflex-column pflex-50p pb pt" *ngFor="let commodity of spaceCommodities">
         <app-checkbox
-          [(model)]="amenity.selected"
-          [label]="amenity.label"
-          [icon]="amenity.icon"
+          [(model)]="commodity.selected"
+          [label]="commodity.label"
+          [icon]="commodity.icon"
         ></app-checkbox>
       </div>
     </div>
-
 
     <div class="pflex-row pt+">
         <h2 class="mb-">O que pode dizer do seu seu espaço?</h2>
