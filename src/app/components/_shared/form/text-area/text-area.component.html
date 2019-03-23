@@ -1,3 +1,10 @@
 <mat-form-field class="full-width">
-  <textarea matInput matTextareaAutosize matAutosizeMinRows=5 matAutosizeMaxRows=10></textarea>
+  <textarea 
+    matInput 
+    matTextareaAutosize 
+    matAutosizeMinRows=5 
+    matAutosizeMaxRows=10
+    [(ngModel)]="model"
+    (change)="onChange()"
+  ></textarea>
 </mat-form-field>

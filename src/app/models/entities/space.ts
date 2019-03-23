@@ -2,6 +2,8 @@ import { Location } from './location';
 
 export class Space {
     id: Number;
+    title: string;
+    description: string;
     location: Location = new Location();
     type: SpaceType;
     commodities: SpaceCommodity[] = [];
