@@ -39,6 +39,7 @@ import { SelectObjectComponent } from './components/_shared/form/select-object/s
 import { LocationInputComponent } from './components/_shared/form/location-input/location-input.component'
 import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.component'
 import { TextAreaComponent } from './components/_shared/form/text-area/text-area.component'
+import { SpacesListComponent } from './components/home/components/spaces-list/spaces-list.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -69,7 +70,8 @@ const appRoutes: Routes = [
     SelectObjectComponent,
     LocationInputComponent,
     CheckboxComponent,
-    TextAreaComponent
+    TextAreaComponent,
+    SpacesListComponent
   ],
   imports: [
     HttpClientModule,
