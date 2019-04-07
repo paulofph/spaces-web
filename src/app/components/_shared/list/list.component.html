@@ -1,3 +1,5 @@
-<div class="box" *ngFor="let item of items; let i = index">
+<div class="pflex-column pflex-33p"
+     [ngClass]="{'pflex-column pflex-33p': mode === 'mosaic'}"
+     *ngFor="let item of items; let i = index">
   <ng-container *ngTemplateOutlet="template; context: { item: item, index: i }"></ng-container>
 </div>

@@ -8,9 +8,8 @@ import { Component, OnInit, Input, ContentChild, TemplateRef } from '@angular/co
 export class ListComponent implements OnInit {
 
   @Input() items: any[];
+  @Input() mode: string = 'mosaic';
   @ContentChild(TemplateRef) template: TemplateRef<any>;
 
-  ngOnInit() {
-  }
-
+  ngOnInit() { }
 }

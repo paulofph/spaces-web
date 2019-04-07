@@ -41,6 +41,7 @@ import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.c
 import { TextAreaComponent } from './components/_shared/form/text-area/text-area.component'
 import { SpacesListComponent } from './components/home/components/spaces-list/spaces-list.component'
 import { ListComponent } from './components/_shared/list/list.component'
+import { SpaceCardComponent } from './components/home/components/space-card/space-card.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -73,7 +74,8 @@ const appRoutes: Routes = [
     CheckboxComponent,
     TextAreaComponent,
     SpacesListComponent,
-    ListComponent
+    ListComponent,
+    SpaceCardComponent
   ],
   imports: [
     HttpClientModule,

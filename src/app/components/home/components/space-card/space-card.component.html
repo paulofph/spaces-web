@@ -1,3 +1,4 @@
-<p>
-  space-card works!
-</p>
+<div class="pflex-row full-width">
+    <div *ngIf="random<0.5" class="card-image" style="background-image: url('./../../../../../assets/images/piscina2.jpg')"></div>
+    <div *ngIf="random>=0.5" class="card-image" style="background-image: url('./../../../../../assets/images/pool.jpeg')"></div>
+</div>

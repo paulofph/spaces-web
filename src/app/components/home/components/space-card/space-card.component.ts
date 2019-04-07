@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./space-card.component.scss']
 })
 export class SpaceCardComponent implements OnInit {
+  public random: number = Math.random()
 
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
