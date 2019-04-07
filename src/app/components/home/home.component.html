@@ -6,12 +6,16 @@
   ></app-search-bar>
 </div>
 
-<div class="pflex-row">
+<div class="pflex-row" *ngIf="spaces">
   <div class="pflex-column pflex-70p">
-    <app-spaces-list></app-spaces-list>
+    <app-list [items]="spaces">
+      <ng-template let-space="item">
+       -{{space}}-
+      </ng-template>
+    </app-list>
   </div>
   <div class="pflex-column pflex-30p">
-    <app-map *ngIf="spaces"
+    <app-map
       [center]="mapCenter"
       [spaces]="spaces"
     ></app-map>

@@ -40,6 +40,7 @@ import { LocationInputComponent } from './components/_shared/form/location-input
 import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.component'
 import { TextAreaComponent } from './components/_shared/form/text-area/text-area.component'
 import { SpacesListComponent } from './components/home/components/spaces-list/spaces-list.component'
+import { ListComponent } from './components/_shared/list/list.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -71,7 +72,8 @@ const appRoutes: Routes = [
     LocationInputComponent,
     CheckboxComponent,
     TextAreaComponent,
-    SpacesListComponent
+    SpacesListComponent,
+    ListComponent
   ],
   imports: [
     HttpClientModule,
