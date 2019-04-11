@@ -3,8 +3,13 @@
       <div *ngIf="random<0.5" class="card-image" style="background-image: url('./../../../../../assets/images/piscina2.jpg')"></div>
       <div *ngIf="random>=0.5" class="card-image" style="background-image: url('./../../../../../assets/images/pool.jpeg')"></div>
   </div>
-  <div class="pflex-row card-content">
-    <h6 class="card-title-secondary">Piscina Exterior | Hotel</h6>
-    <h5 class="card-title-primary">{{ title }}</h5>
+  <div class="pflex-row">
+    <div class="pflex-column pflex-1">
+      <h6 class="card-title-secondary">Piscina Exterior | Hotel</h6>
+      <h5 class="card-title-primary">{{ title }}</h5>
+    </div>
+    <div class="pflex-column pflex-10p pflex-center pflex-cross-center">
+      <app-colored-number-box></app-colored-number-box>
+    </div>
   </div>
 </div>

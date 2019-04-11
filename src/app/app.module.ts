@@ -42,6 +42,7 @@ import { TextAreaComponent } from './components/_shared/form/text-area/text-area
 import { SpacesListComponent } from './components/home/components/spaces-list/spaces-list.component'
 import { ListComponent } from './components/_shared/list/list.component'
 import { SpaceCardComponent } from './components/home/components/space-card/space-card.component'
+import { ColoredNumberBoxComponent } from './components/_shared/indicators/colored-number-box/colored-number-box.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -75,7 +76,8 @@ const appRoutes: Routes = [
     TextAreaComponent,
     SpacesListComponent,
     ListComponent,
-    SpaceCardComponent
+    SpaceCardComponent,
+    ColoredNumberBoxComponent
   ],
   imports: [
     HttpClientModule,
