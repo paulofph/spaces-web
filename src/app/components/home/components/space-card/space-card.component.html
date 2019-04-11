@@ -1,4 +1,10 @@
-<div class="pflex-row full-width">
-    <div *ngIf="random<0.5" class="card-image" style="background-image: url('./../../../../../assets/images/piscina2.jpg')"></div>
-    <div *ngIf="random>=0.5" class="card-image" style="background-image: url('./../../../../../assets/images/pool.jpeg')"></div>
+<div class="p+">
+  <div class="pflex-row full-width pflex-center">
+      <div *ngIf="random<0.5" class="card-image" style="background-image: url('./../../../../../assets/images/piscina2.jpg')"></div>
+      <div *ngIf="random>=0.5" class="card-image" style="background-image: url('./../../../../../assets/images/pool.jpeg')"></div>
+  </div>
+  <div class="pflex-row card-content">
+    <h6 class="card-title-secondary">Piscina Exterior | Hotel</h6>
+    <h5 class="card-title-primary">{{ title }}</h5>
+  </div>
 </div>

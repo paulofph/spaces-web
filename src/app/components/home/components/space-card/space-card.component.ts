@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Space } from 'src/app/models/entities/space';
 
 @Component({
   selector: 'app-space-card',
@@ -6,12 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./space-card.component.scss']
 })
 export class SpaceCardComponent implements OnInit {
+  
+  @Input() space: Space;
   public random: number = Math.random()
+
 
   constructor() { }
 
   ngOnInit() {
+  
+  }
 
+  get title():string {
+    return this.space.title || 'Sem Titulo';
   }
 
 }

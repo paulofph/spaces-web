@@ -10,8 +10,7 @@
   <div class="pflex-column pflex-65p">
     <app-list class="pflex-row" [items]="spaces" [mode]="'mosaic'">
       <ng-template let-space="item">
-          <app-space-card></app-space-card>
-        <!-- <div>1</div> -->
+        <app-space-card [space]="space"></app-space-card>
       </ng-template>
     </app-list>
   </div>

@@ -1,6 +1,21 @@
+@import "./../../../../../colors.scss";
 
 .card-image {
-    width: 200px;
-    height: 100px;
+    width: 100%;
+    min-height: 200px;
     background-size: cover;
+}
+
+.card-content {
+    display: inline;
+}
+
+.card-title-primary {
+    margin: 4px;
+    color: $color-tertiary;
+}
+
+.card-title-secondary {
+    margin: 4px;
+    color: $color-tertiary-light;
 }
