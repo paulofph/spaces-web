@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -46,12 +46,24 @@ import { ColoredNumberBoxComponent } from './components/_shared/indicators/color
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
+import { TranslationService } from './services/translation/translation.service'
+
+//Pipes
+import { TranslatePipe } from './_shared/pipes/translate.pipe'
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'owner-area', component: OwnerAreaComponent },
   { path: 'space/:id', component: SpaceComponent }
 ];
+
+export function initConfiguration(
+  translationService: TranslationService
+): Function {
+  return () => {
+    return translationService.load(); // makes http request and returns Promise correctly
+  }
+}
 
 @NgModule({
   declarations: [
@@ -77,7 +89,8 @@ const appRoutes: Routes = [
     SpacesListComponent,
     ListComponent,
     SpaceCardComponent,
-    ColoredNumberBoxComponent
+    ColoredNumberBoxComponent,
+    TranslatePipe
   ],
   imports: [
     HttpClientModule,
@@ -107,7 +120,15 @@ const appRoutes: Routes = [
       provide: HTTP_INTERCEPTORS, 
       useClass: AppHttpInterceptor, 
       multi: true 
-    }
+    },
+    { 
+      provide: APP_INITIALIZER, 
+      useFactory: initConfiguration, 
+      deps: [TranslationService], 
+      multi: true 
+    },
+    TranslationService,
+    TranslatePipe
   ],
   entryComponents: [
     ModalComponent
