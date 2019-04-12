@@ -51,7 +51,7 @@
       <div class="pflex-column pflex-50p pb pt" *ngFor="let commodity of spaceCommodities">
         <app-checkbox
           [(model)]="commodity.selected"
-          [label]="commodity.label"
+          [label]="translationService.translate(commodity.name)"
           [icon]="commodity.icon"
         ></app-checkbox>
       </div>

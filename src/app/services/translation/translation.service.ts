@@ -28,7 +28,6 @@ export class TranslationService {
   }
 
   public translate(key: string):string{
-    console.log('key', key)
     if(key === undefined)
       return ''
     const result = this.translations.filter(obj => obj.key == key)[0]

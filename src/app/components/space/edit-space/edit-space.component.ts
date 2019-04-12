@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Space, SpaceType, SpaceCommodity } from 'src/app/models/entities/space';
 import { forkJoin } from 'rxjs';
 import { SpaceService } from 'src/app/services/http/space/space.service';
+import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
   selector: 'app-edit-space',
@@ -18,7 +19,8 @@ export class EditSpaceComponent implements OnInit {
   public spaceCommodities: SpaceCommodity[] = [];
 
   constructor(
-    private spaceService: SpaceService
+    private spaceService: SpaceService,
+    public translationService: TranslationService
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,7 @@ export class EditSpaceComponent implements OnInit {
       result[1].forEach(commodity => {
         this.spaceCommodities.push(new SpaceCommodity(commodity))
       });
+      console.log(this.spaceCommodities)
       subscriber.unsubscribe();
     })
   }

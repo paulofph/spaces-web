@@ -3,5 +3,45 @@
         "key":"homePage",
         "pt":"Página Inicial",
         "en":"Home Page"
+    },
+    {
+        "key":"interiorPool",
+        "pt":"Piscina Interior",
+        "en":"Interior Pool"
+    },
+    {
+        "key":"exteriorPool",
+        "pt":"Piscina Exterior",
+        "en":"Exterior Pool"
+    },
+    {
+        "key":"barbeque",
+        "pt":"Churrasco",
+        "en":"Barbeque"
+    },
+    {
+        "key":"beachUmbrella",
+        "pt":"Chapéu de Praia",
+        "en":"Beach Umbrella"
+    },
+    {
+        "key":"chaiseLongue",
+        "pt":"Poltrona",
+        "en":"Chaise Longue"
+    },
+    {
+        "key":"toilet",
+        "pt":"Casa de Banho",
+        "en":"Toilet"
+    },
+    {
+        "key":"bathHouse",
+        "pt":"Balneário",
+        "en":"Bath House"
+    },
+    {
+        "key":"towel",
+        "pt":"Toalha",
+        "en":"Towel"
     }
 ]
