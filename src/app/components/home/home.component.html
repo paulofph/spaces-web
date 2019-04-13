@@ -8,6 +8,9 @@
 
 <div class="pflex-row" *ngIf="spaces">
   <div class="pflex-column pflex-65p">
+    <div class="pflex-row pl pt+">
+      <h3>{{spaces.length}} {{ 'pools' | translate}}</h3>
+    </div>
     <app-list class="pflex-row" [items]="spaces" [mode]="'mosaic'">
       <ng-template let-space="item">
         <app-space-card [space]="space"></app-space-card>

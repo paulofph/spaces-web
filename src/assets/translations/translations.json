@@ -58,5 +58,10 @@
         "key":"individual",
         "pt":"Particular",
         "en":"Individual"
+    },
+    {
+        "key":"pools",
+        "pt":"Piscinas",
+        "en":"Pools"
     }
 ]
