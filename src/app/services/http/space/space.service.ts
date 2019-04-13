@@ -42,4 +42,8 @@ export class SpaceService {
   getSpaceTypes(): Observable<any[]>{
     return this.httpClient.get<SpaceType[]>(`${environment.apiUrl}/spaces/types`);
   }
+
+  getSpaceTraderTypes(): Observable<any[]>{
+    return this.httpClient.get<SpaceType[]>(`${environment.apiUrl}/spaces/traderTypes`);
+  }
 }

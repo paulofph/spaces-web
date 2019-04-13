@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Space, SpaceType, SpaceCommodity } from 'src/app/models/entities/space';
+import { Space, SpaceType, SpaceCommodity, SpaceTraderType } from 'src/app/models/entities/space';
 import { forkJoin } from 'rxjs';
 import { SpaceService } from 'src/app/services/http/space/space.service';
 import { TranslationService } from 'src/app/services/translation/translation.service';
@@ -16,6 +16,7 @@ export class EditSpaceComponent implements OnInit {
   
   public locationSearch: String = null;
   public spaceTypes: SpaceType[];
+  public spaceTraderTypes: SpaceTraderType[];
   public spaceCommodities: SpaceCommodity[] = [];
 
   constructor(
@@ -25,13 +26,15 @@ export class EditSpaceComponent implements OnInit {
 
   ngOnInit() {
     const getSpaceTypes = this.spaceService.getSpaceTypes();
+    const getSpaceTraderTypes = this.spaceService.getSpaceTraderTypes();
     const getSpaceCommodities = this.spaceService.getSpaceCommodities();
-    let subscriber = forkJoin([getSpaceTypes, getSpaceCommodities]).subscribe((result: any) => {
+    let subscriber = forkJoin([getSpaceTypes, getSpaceTraderTypes, getSpaceCommodities]).subscribe((result: any) => {
       this.spaceTypes = result[0];
-      result[1].forEach(commodity => {
+      this.spaceTraderTypes = result[1];
+      result[2].forEach(commodity => {
         this.spaceCommodities.push(new SpaceCommodity(commodity))
       });
-      console.log(this.spaceCommodities)
+
       subscriber.unsubscribe();
     })
   }

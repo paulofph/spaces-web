@@ -6,10 +6,16 @@ export class Space {
     description: string;
     location: Location = new Location();
     type: SpaceType;
+    traderType: SpaceTraderType;
     commodities: SpaceCommodity[] = [];
 }
 
 export class SpaceType {
+    id: Number;
+    label: String;
+} 
+
+export class SpaceTraderType {
     id: Number;
     label: String;
 } 

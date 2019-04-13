@@ -24,6 +24,13 @@
           [placeholder]="'Tipo de Espaço'" 
         ></app-select-object>
       </div>
+      <div class="pflex-column pflex-1 pl">
+        <app-select-object
+          [options]="spaceTraderTypes"
+          [(model)]="space.traderType"
+          [placeholder]="'Tipo de Comerciante'" 
+        ></app-select-object>
+      </div>
       <div class="pflex-column pflex-10p pl">
         <app-numerical-input
           [placeholder]="'Lotação'"
