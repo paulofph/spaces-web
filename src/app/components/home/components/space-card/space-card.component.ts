@@ -15,7 +15,7 @@ export class SpaceCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  
+    this.space.rating = Math.round( Math.random() * 5 * 10 ) / 10
   }
 
   get title():string {

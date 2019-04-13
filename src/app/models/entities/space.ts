@@ -8,6 +8,7 @@ export class Space {
     type: SpaceType;
     traderType: SpaceTraderType;
     commodities: SpaceCommodity[] = [];
+    rating: number;
 }
 
 export class SpaceType {
