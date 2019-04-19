@@ -34,7 +34,7 @@ import { MapPlaceDetailsComponent } from './components/_shared/map/map-place-det
 import { OwnerAreaComponent } from './components/owner-area/owner-area.component'
 import { SpaceComponent } from './components/space/space.component'
 import { InputComponent } from './components/_shared/form/input/input.component'
-import { EditSpaceComponent } from './components/space/edit-space/edit-space.component'
+import { SpaceEditComponent } from './components/space/space-edit/space-edit.component'
 import { SelectObjectComponent } from './components/_shared/form/select-object/select-object.component'
 import { LocationInputComponent } from './components/_shared/form/location-input/location-input.component'
 import { CheckboxComponent } from './components/_shared/form/checkbox/checkbox.component'
@@ -54,6 +54,7 @@ import { TranslatePipe } from './_shared/pipes/translate.pipe'
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'owner-area', component: OwnerAreaComponent },
+  { path: 'space/edit/:id', component: SpaceEditComponent },
   { path: 'space/:id', component: SpaceComponent }
 ];
 
@@ -81,7 +82,7 @@ export function initConfiguration(
     OwnerAreaComponent,
     SpaceComponent,
     InputComponent,
-    EditSpaceComponent,
+    SpaceEditComponent,
     SelectObjectComponent,
     LocationInputComponent,
     CheckboxComponent,

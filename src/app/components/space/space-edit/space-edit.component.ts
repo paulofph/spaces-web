@@ -5,15 +5,15 @@ import { SpaceService } from 'src/app/services/http/space/space.service';
 import { TranslationService } from 'src/app/services/translation/translation.service';
 
 @Component({
-  selector: 'app-edit-space',
-  templateUrl: './edit-space.component.html',
-  styleUrls: ['./edit-space.component.scss']
+  selector: 'app-space-edit',
+  templateUrl: './space-edit.component.html',
+  styleUrls: ['./space-edit.component.scss']
 })
-export class EditSpaceComponent implements OnInit { 
-  @Input() space: Space;
+export class SpaceEditComponent implements OnInit { 
   @Output() onSave = new EventEmitter(); 
   @Output() onPublish = new EventEmitter(); 
   
+  public space: Space = new Space();
   public locationSearch: String = null;
   public spaceTypes: SpaceType[];
   public spaceTraderTypes: SpaceTraderType[];

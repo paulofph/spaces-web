@@ -10,6 +10,7 @@ import { SpaceService } from 'src/app/services/http/space/space.service';
 export class SpaceComponent implements OnInit {
 
   public space: Space = new Space();
+  public editMode: boolean = true;
 
   constructor(
     private spaceService: SpaceService
