@@ -37,3 +37,9 @@ h6 {
 .full-width {
     width: 100%;
 }
+
+.limited-with-section {
+    max-width: 1300px;
+    margin: 0 auto !important;
+    float: none !important;
+}

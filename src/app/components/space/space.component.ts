@@ -18,16 +18,4 @@ export class SpaceComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  save(space: Space) {
-    let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
-      subscriber.unsubscribe();
-    });
-  }
-
-  publish(space: Space) {
-    let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
-      subscriber.unsubscribe();
-    });
-  }
 }

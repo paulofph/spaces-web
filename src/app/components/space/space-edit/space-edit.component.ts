@@ -45,14 +45,16 @@ export class SpaceEditComponent implements OnInit {
     this.space.location.longitude = mapsEvent.geometry.location.lng();
   }
 
-  save() {
-    this._addSelectedCommodities();
-    this.onSave.emit(this.space);
+  save(space: Space) {
+    let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
+      subscriber.unsubscribe();
+    });
   }
 
-  publish() {
-    this._addSelectedCommodities();
-    this.onPublish.emit(this.space);
+  publish(space: Space) {
+    let subscriber = this.spaceService.saveSpace(space).subscribe(_ => {
+      subscriber.unsubscribe();
+    });
   }
 
   _addSelectedCommodities() {

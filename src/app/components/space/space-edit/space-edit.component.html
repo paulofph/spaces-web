@@ -1,97 +1,99 @@
-<div class="pflex-row pflex-center">
-  <img src="./../../../../assets/images/home.png">
-</div>
-<div class="pflex-row">
-  <div class="pflex-column pflex-50p">
-    <div class="pflex-row">
-      <h2 class="mb-">Qual o nome do seu espaço?</h2>
-    </div>
-    <div class="pflex-row">
-      <app-input
-        class="full-width"
-        [(model)]="space.title"
-      ></app-input>
-    </div>
+<div class="limited-with-section">
+  <div class="pflex-row pflex-center">
+    <img src="./../../../../assets/images/home.png">
+  </div>
+  <div class="pflex-row">
+    <div class="pflex-column pflex-50p">
+      <div class="pflex-row">
+        <h2 class="mb-">Qual o nome do seu espaço?</h2>
+      </div>
+      <div class="pflex-row">
+        <app-input
+          class="full-width"
+          [(model)]="space.title"
+        ></app-input>
+      </div>
 
-    <div class="pflex-row pt+">
-        <h2 class="mb-">Que tipo de espaço tem?</h2>
-    </div>
-    <div class="pflex-row">
-      <div class="pflex-column pflex-1">
-        <app-select-object
-          [options]="spaceTypes"
-          [(model)]="space.type"
-          [placeholder]="'Tipo de Espaço'" 
-        ></app-select-object>
+      <div class="pflex-row pt+">
+          <h2 class="mb-">Que tipo de espaço tem?</h2>
       </div>
-      <div class="pflex-column pflex-1 pl">
-        <app-select-object
-          [options]="spaceTraderTypes"
-          [(model)]="space.traderType"
-          [placeholder]="'Tipo de Comerciante'" 
-        ></app-select-object>
+      <div class="pflex-row">
+        <div class="pflex-column pflex-1">
+          <app-select-object
+            [options]="spaceTypes"
+            [(model)]="space.type"
+            [placeholder]="'Tipo de Espaço'" 
+          ></app-select-object>
+        </div>
+        <div class="pflex-column pflex-1 pl">
+          <app-select-object
+            [options]="spaceTraderTypes"
+            [(model)]="space.traderType"
+            [placeholder]="'Tipo de Comerciante'" 
+          ></app-select-object>
+        </div>
+        <div class="pflex-column pflex-10p pl">
+          <app-numerical-input
+            [placeholder]="'Lotação'"
+            [(model)]="space.availablePlaces"
+          ></app-numerical-input>
+        </div>
       </div>
-      <div class="pflex-column pflex-10p pl">
-        <app-numerical-input
-          [placeholder]="'Lotação'"
-          [(model)]="space.availablePlaces"
-        ></app-numerical-input>
-      </div>
-    </div>
 
-    <div class="pflex-row pt+">
-        <h2 class="mb-">Onde é o seu espaço?</h2>
-    </div>
-    <div class="pflex-row">
-      <div class="pflex-column pflex-1">
-          <app-location-input
-            [searchText]="locationSearch"
-            (onAddressChange)="onAddressChange($event)"
-          ></app-location-input>
+      <div class="pflex-row pt+">
+          <h2 class="mb-">Onde é o seu espaço?</h2>
       </div>
-    </div>
+      <div class="pflex-row">
+        <div class="pflex-column pflex-1">
+            <app-location-input
+              [searchText]="locationSearch"
+              (onAddressChange)="onAddressChange($event)"
+            ></app-location-input>
+        </div>
+      </div>
 
-    <div class="pflex-row pt+">
-        <h2 class="mb-">Que comodidades tem disponíveis?</h2>
-    </div>
-    <div class="pflex-row">
-      <div class="pflex-column pflex-50p pb pt" *ngFor="let commodity of spaceCommodities">
-        <app-checkbox
-          [(model)]="commodity.selected"
-          [label]="translationService.translate(commodity.name)"
-          [icon]="commodity.icon"
-        ></app-checkbox>
+      <div class="pflex-row pt+">
+          <h2 class="mb-">Que comodidades tem disponíveis?</h2>
       </div>
-    </div>
+      <div class="pflex-row">
+        <div class="pflex-column pflex-50p pb pt" *ngFor="let commodity of spaceCommodities">
+          <app-checkbox
+            [(model)]="commodity.selected"
+            [label]="translationService.translate(commodity.name)"
+            [icon]="commodity.icon"
+          ></app-checkbox>
+        </div>
+      </div>
 
-    <div class="pflex-row pt+">
-        <h2 class="mb-">O que pode dizer do seu seu espaço?</h2>
-    </div>
-    <div class="pflex-row">
-      <div class="pflex-column pflex-1">
-        <app-text-area
-          [(model)]="space.description"
-        ></app-text-area>
+      <div class="pflex-row pt+">
+          <h2 class="mb-">O que pode dizer do seu seu espaço?</h2>
       </div>
+      <div class="pflex-row">
+        <div class="pflex-column pflex-1">
+          <app-text-area
+            [(model)]="space.description"
+          ></app-text-area>
+        </div>
+      </div>
+    </div>
+    <div class="pflex-column pflex-1 p+">
+      <app-map
+        *ngIf="space.location.latitude"
+        [center]="space.location"
+        [spaces]="[space]"
+      ></app-map>
     </div>
   </div>
-  <div class="pflex-column pflex-1 p+">
-    <app-map
-      *ngIf="space.location.latitude"
-      [center]="space.location"
-      [spaces]="[space]"
-    ></app-map>
+  <div class="pflex-row">
+    <app-icon-text-button
+      class="pr"
+      [label]="'Guardar'"
+      (onClick)="save()"
+    ></app-icon-text-button>
+    <app-icon-text-button
+      [label]="'Publicar'"
+      [color]="'color-primary'"
+      (onClick)="publish()"
+    ></app-icon-text-button>
   </div>
-</div>
-<div class="pflex-row">
-  <app-icon-text-button
-    class="pr"
-    [label]="'Guardar'"
-    (onClick)="save()"
-  ></app-icon-text-button>
-  <app-icon-text-button
-    [label]="'Publicar'"
-    [color]="'color-primary'"
-    (onClick)="publish()"
-  ></app-icon-text-button>
 </div>
