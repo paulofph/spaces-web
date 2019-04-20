@@ -3,6 +3,7 @@ import { Space, SpaceType, SpaceCommodity, SpaceTraderType } from 'src/app/model
 import { forkJoin } from 'rxjs';
 import { SpaceService } from 'src/app/services/http/space/space.service';
 import { TranslationService } from 'src/app/services/translation/translation.service';
+import { GoogleMapsService } from 'src/app/services/google-maps/google-maps.service';
 
 @Component({
   selector: 'app-space-edit',
@@ -21,7 +22,8 @@ export class SpaceEditComponent implements OnInit {
 
   constructor(
     private spaceService: SpaceService,
-    public translationService: TranslationService
+    public translationService: TranslationService,
+    public googleMapsService: GoogleMapsService
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class SpaceEditComponent implements OnInit {
   }
 
   onAddressChange(mapsEvent) {
+    this.space.location.address = this.googleMapsService.computeAddress(mapsEvent);
     this.locationSearch = mapsEvent.formatted_address;
     this.space.location.latitude = mapsEvent.geometry.location.lat();
     this.space.location.longitude = mapsEvent.geometry.location.lng();
