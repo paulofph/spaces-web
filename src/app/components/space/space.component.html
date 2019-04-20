@@ -10,6 +10,13 @@
       <h4>{{space.title}}</h4>
 
       <div class="pt+ mt+ top-horizontal-separator">
+        <h5>Caracteristicas</h5>
+        <div class="pt+">
+          <app-characteristics [space]="space"></app-characteristics>
+        </div>
+      </div>
+
+      <div class="pt+ mt+ top-horizontal-separator">
         <h5>Comodidades</h5>
         <app-commodities class="pflex-row pt+" [commodities]="space.commodities"></app-commodities>
       </div>

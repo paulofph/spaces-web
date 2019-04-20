@@ -63,5 +63,10 @@
         "key":"pools",
         "pt":"Piscinas",
         "en":"Pools"
+    },
+    {
+        "key":"capacity",
+        "pt":"Lotação",
+        "en":"Capacity"
     }
 ]

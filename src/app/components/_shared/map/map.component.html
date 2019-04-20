@@ -2,6 +2,7 @@
   [latitude]="center.latitude" 
   [longitude]="center.longitude" 
   [zoom]="12"
+  [scrollwheel]="false"
   [ngStyle]="{ 'height': mapHeight }"
   >
   <agm-marker *ngFor="let space of spaces" 

@@ -44,7 +44,9 @@ import { ListComponent } from './components/_shared/list/list.component'
 import { SpaceCardComponent } from './components/home/components/space-card/space-card.component'
 import { ColoredNumberBoxComponent } from './components/_shared/indicators/colored-number-box/colored-number-box.component'
 import { IconLabelComponent } from './components/_shared/indicators/icon-label/icon-label.component'
+import { IconLabelLabelComponent } from './components/_shared/indicators/icon-label-label/icon-label-label.component'
 import { CommoditiesComponent } from './components/space/components/commodities/commodities.component'
+import { CharacteristicsComponent } from './components/space/components/characteristics/characteristics.component'
 
 //Services
 import { AuthService } from './services/http/auth/auth.service'
@@ -94,7 +96,9 @@ export function initConfiguration(
     SpaceCardComponent,
     ColoredNumberBoxComponent,
     IconLabelComponent,
+    IconLabelLabelComponent,
     CommoditiesComponent,
+    CharacteristicsComponent,
     TranslatePipe
   ],
   imports: [

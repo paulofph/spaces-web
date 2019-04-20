@@ -1,0 +1,22 @@
+<div class="pflex-row">
+  <div class="pflex-column pflex-1">
+    <app-icon-label-label
+      [mainLabel]="translationService.translate('capacity')"
+      [secondaryLabel]="space.availablePlaces"
+      [icon]="'fas fa-users'"
+    ></app-icon-label-label>
+  </div>
+  <div class="pflex-column pflex-1">
+    <app-icon-label-label
+      [mainLabel]="translationService.translate('pools')"
+      [secondaryLabel]="'10'"
+      [icon]="'fas fa-water'"
+    ></app-icon-label-label>
+  </div>
+  <div class="pflex-column pflex-1">
+    <app-icon-label
+      [label]="translationService.translate(space.traderType.name)"
+      [icon]="'fas fa-home'"
+    ></app-icon-label>
+  </div>
+</div>
