@@ -52,6 +52,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  navigateToSpace(id: number) {
+    this.navigationService.space(id);
+  }
+
   _updateRoute() {
     this.navigationService.addQueryParams({
       longitude: this.spaceFilter.location.longitude || null,

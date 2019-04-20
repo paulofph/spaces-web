@@ -13,7 +13,7 @@
     </div>
     <app-list class="pflex-row" [items]="spaces" [mode]="'mosaic'">
       <ng-template let-space="item">
-        <app-space-card [space]="space"></app-space-card>
+        <app-space-card class="clickable" (click)="navigateToSpace(space.id)" [space]="space"></app-space-card>
       </ng-template>
     </app-list>
   </div>

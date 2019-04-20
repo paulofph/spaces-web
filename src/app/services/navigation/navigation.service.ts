@@ -17,6 +17,11 @@ export class NavigationService {
     );
   }
 
+  space(id: number) {
+    this.router.navigate(['space', id])
+  }
+
+  //To deprecate and Delete Component
   ownerArea() {
     this.router.navigate(['owner-area'])
   }

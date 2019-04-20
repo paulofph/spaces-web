@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Space } from 'src/app/models/entities/space';
 import { Location } from 'src/app/models/entities/location';
 
@@ -10,10 +10,15 @@ import { Location } from 'src/app/models/entities/location';
 export class MapComponent implements OnInit {
   @Input() center: Location;
   @Input() spaces: Space[] = [];
+  @Input() height: number = 600;
+  @Output() onReady = new EventEmitter();
+  
   public icon: any;
+  public mapHeight: string;
   constructor() { }
 
   ngOnInit() {
+    this.mapHeight = this.height + 'px';
     this.icon= {
       url: './assets/images/placeholder.svg',
       scaledSize: {
@@ -23,17 +28,11 @@ export class MapComponent implements OnInit {
     }
   }
 
-  title: string = 'My first AGM project';
-  lat: number = 43.678418;
-  lng: number = -79.809007;
-
-  title1: string = 'My first AGM project';
-  lat1: number = 44.678420;
-  lng1: number = -79.809009;
-
-
-
   onClick() {
     console.log('hey')
+  }
+
+  mapReady() {
+    this.onReady.emit();
   }
 }

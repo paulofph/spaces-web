@@ -1,4 +1,9 @@
-<agm-map [latitude]="center.latitude" [longitude]="center.longitude" [zoom]="12">
+<agm-map (mapReady)="mapReady()" 
+  [latitude]="center.latitude" 
+  [longitude]="center.longitude" 
+  [zoom]="12"
+  [ngStyle]="{ 'height': mapHeight }"
+  >
   <agm-marker *ngFor="let space of spaces" 
     [latitude]="space.location.latitude" 
     [longitude]="space.location.longitude"

@@ -1,4 +1,38 @@
-<div class="pflex-row pflex-center">
-  <div class="pflex-column pflex-70p">
+<div *ngIf="space">
+  <div class="pflex-row full-width pflex-center">
+    <div *ngIf="random<0.5" class="card-image" style="background-image: url('./../../assets/images/piscina2.jpg')"></div>
+    <div *ngIf="random>=0.5" class="card-image" style="background-image: url('./../../assets/images/pool.jpeg')"></div>
+  </div>
+
+  <div class="pflex-row limited-with-section">
+    <div class="pflex-clumn pflex-60p">
+      <h2>{{space.title}}</h2>
+      <h4>{{space.title}}</h4>
+
+      <div class="pt+ mt+ top-horizontal-separator">
+        <h5>Comodidades</h5>
+        <app-commodities class="pflex-row pt+" [commodities]="space.commodities"></app-commodities>
+      </div>
+
+      <div class="pt+ mt+ top-horizontal-separator">
+        <h5>Localização</h5>
+        <div class="pt+">
+          <app-map
+            *ngIf="space.location.latitude"
+            [center]="space.location"
+            [spaces]="[space]"
+            [height]="200"
+          ></app-map>
+        </div>
+      </div>
+
+      <div class="pt+ mt+ top-horizontal-separator">
+        <h5>Regras</h5>
+        <div class="pt+ map">
+
+        </div>
+      </div>
+    </div>
+    <div class="pflex-clumn pflex-1">123</div>
   </div>
 </div>

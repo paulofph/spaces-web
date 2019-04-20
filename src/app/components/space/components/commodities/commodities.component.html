@@ -1,0 +1,6 @@
+<div class="pflex-column pflex-50p pt pb" *ngFor="let commodity of commodities" >
+  <app-icon-label
+    [label]="translationService.translate(commodity.name)"
+    [icon]="commodity.icon"
+  ></app-icon-label>
+</div>
